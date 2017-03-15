@@ -1,0 +1,1448 @@
+* {
+    font-family: alternate-gothic-no-1-d, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+h1 {
+    height: 0;
+    margin: 0;
+    text-indent: -9999px;
+}
+
+h2 {
+    color: white;
+    display: block;
+    font-size: 3em;
+    margin: 2vw 0 1vw 0;
+    padding-left: 5%;
+    text-align: left;
+    width: 40%;
+}
+
+h4 {
+    font-family: mr-eaves-xl-modern, sans-serif;
+    font-size: 1.4em;
+    font-style: normal;
+    font-weight: 700;
+    margin: 0;
+    padding: 2vw 0 1vw 0;
+}
+/*gradient ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¼ber den meisten IMGs - gesetzt als pseudo*/
+.charts-top-image:after, .charts-image:after, .slider:after, .news li:after, .top-reviews-element:after, .topic-picture:after {
+    background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.51) 95%, rgba(0, 0, 0, 0.51) 96%, rgba(0, 0, 0, 0.51) 100%);
+    content: '';
+    display: block;
+    height: 100%;
+    left: 0;
+    overflow-x: hidden;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+.news li:hover::after {
+    visibility: hidden;
+    transition: 0s;
+}
+.news li a:hover {
+    transition:0s ease-in;
+}
+
+.progress-bar { /*progress bar im slider fÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¼r anzeige des fortschritts*/
+    animation: progress-line 30s ease-out infinite;
+    background: #000;
+    height: 5px;
+    position: relative;
+    top: 4px;
+    width: 680px;
+    z-index: 50;
+}
+
+.slider figure picture img {
+    float: left; /* damit sich die images nebeneinander anordnen und auserhalb des flows sind*/
+    width: 20%; /*weil 5 images die nebeneinander sind*/
+}
+
+.slider-elements {
+    animation: 30s main-slider infinite;
+    position: relative;
+    width: 500%;
+}
+
+.slider-elements-text {
+    animation: 30s main-slider-text infinite;
+    position: relative;
+    top: 40vw;
+}
+.slider-elements-text h3 {
+    width: 40vw;
+}
+a:hover {
+    color: #EB3323;
+}
+
+figure {
+    margin: 0;
+}
+
+nav ul li a:hover, a:hover, .upcoming-titles:hover, .news-titles:hover, .game-dates:hover, .review-titles:hover,  {
+    transition: 0s;
+    transform: scale(1.1);
+
+
+}
+.news li a:hover, nav ul li a:hover, .news li:hover {
+    transform: scale(1.02);
+    transition: 0.1s;
+}
+.background {
+    background-color: black;
+    position: absolute;
+    background-image: url("../img/background.png");
+
+    /*damit das image gefixed ist aber man dennochscrollen kann*/
+    background-size: contain;
+    background-position: 0 -385px;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    position: relative;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+ul, ol {
+    list-style-type: none;
+    padding: 0;
+}
+
+.news li:hover::after {
+    transition: 0s;
+}
+.topic-text h4 {
+    padding-left: 1vw;
+}
+.main-navigation {
+    background: black;
+    box-shadow: 0px 4px 59px 0px rgba(0, 0, 0, 0.75);
+    height: 60px;
+    position: fixed;
+    width: 100%;
+    z-index: 100;
+    border-bottom: solid 2px #005677;
+}
+
+.main-navigation ul li a {
+    color: white;
+    display: block;
+    padding: 20px 1.30vw 10px 1.30vw;
+    text-align: center;
+    text-decoration: none;
+}
+
+.navbar {
+    align-items: center;
+    display: flex;
+    font-size: 1.3em;
+    justify-content: space-between;
+    margin: 0 auto;
+    width: 80.972%;
+}
+
+.logo {
+    padding-top: 6px;
+    width: 101px;
+}
+
+.upcoming-consoles {
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.37) 0%, rgba(0, 0, 0, 1) 100%);
+    border-radius: 0 0 0 5px;
+    display: flex;
+    flex-flow: column wrap;
+    font-size: 0.8em;
+    height: 75%;
+    justify-content: space-around;
+    position: absolute;
+    right: 0;
+    text-align: center;
+    top: 0;
+    width: 5%;
+    z-index: 30;
+}
+
+.upcoming-consoles p {
+    font-size: 1em;
+    margin: 0;
+}
+
+.fa-caret-right {
+    padding-left: 4px;
+}
+
+.main-wrapper {
+    margin: 0 auto;
+    margin-top: 9em;
+    width: 80.972%;
+    /* position: relative; */
+}
+
+.slider {
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    -webkit-box-shadow: -1px 3px 52px 12px rgba(0,0,0,0.75);
+    -moz-box-shadow: -1px 3px 52px 12px rgba(0,0,0,0.75);
+    box-shadow: -1px 3px 52px 12px rgba(0,0,0,0.75);
+}
+
+.slider-circles { /*cirles im slider fÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¼r die anzeige des aktiven sliders*/
+    bottom: 1vw;
+    color: white;
+    display: flex;
+    flex-flow: row wrap;
+    font-size: 1.7vw;
+    justify-content: space-around;
+    position: absolute;
+    right: 45%;
+    width: 8vw;
+    z-index: 30;
+}
+
+.slider1 {
+    animation: active-slider1 30s infinite;
+}
+
+.slider2 {
+    animation: active-slider2 30s infinite;
+}
+
+.slider3 {
+    animation: active-slider3 30s infinite;
+}
+
+.slider4 {
+    animation: active-slider4 30s infinite;
+}
+/* von hier: musste seperat platziert werden wegen der keyframe animation des textes*/
+.slider-text-first {
+    bottom: 13vw;
+    font-size: 2.5vw;
+    left: calc(91% + 3vw);
+    position: absolute;
+    width: 26vw;
+    z-index: 10;
+    animation: fade-in 30s infinite;
+}
+
+.slider-text-second {
+    bottom: 14vw;
+    font-size: 2.3vw;
+    left: calc(196% + 3vw);
+    position: absolute;
+    z-index: 10;
+}
+
+.slider-text-third {
+    bottom: 16vw;
+    font-size: 2.5vw;
+    left: calc(300% + 2vw);
+    position: absolute;
+    z-index: 10;
+}
+.triangle {
+    width: 2.1vw;
+}
+.slider-text-fourth {
+    bottom: 12vw;
+    font-size: 2.8vw;
+    left: calc(400% + 3vw);
+    position: absolute;
+    z-index: 10;
+}
+
+.slider-text1 {
+    margin: 0;
+    padding: 0;
+    text-align: left;
+}
+
+.slider-text2 {
+    font-size: 2.4em;
+    font-weight: 600;
+    margin: 0;
+    padding-left: 2vw;
+    text-shadow: 0 0 0.2em rgba(238, 238, 238, 0.49);
+    width: 40vw;
+}
+
+.slider-text3 {
+    font-size: 1.6em;
+    margin: 0;
+    padding-top: 10px;
+}
+/*bis hier*/
+.titles {
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, rgba(62, 62, 62, 0.52) 100%);
+    color: white;
+    display: flex;
+    font-size: 1.6em;
+    justify-content: space-around;
+    list-style-type: none;
+    margin: 0;
+    padding: 14px 0 8px 0;
+}
+
+.slider-titles {
+    position: relative;
+    z-index: 20;
+}
+
+.newsnav {
+    padding-left: 10px;
+}
+
+.navico {
+    color: white;
+    padding-top: 3px;
+}
+
+.chartsnav {
+    padding-left: 12%;
+}
+
+.upcoming-titles {
+    bottom: 5px;
+    font-size: 3vw;
+    left: 15px;
+    margin: 0;
+    position: absolute;
+    z-index: 30;
+}
+
+.upper-inner-wraper {
+    display: flex;
+    flex-flow: row wrap;
+    padding-top: 24px;
+}
+
+.upper-column-left {
+    margin-right: 7px;
+    width: calc(50% - 3.5px);
+}
+
+.upper-column-right {
+    height: auto;
+    width: calc(50% - 3.5px);
+}
+
+ul {
+    list-style-type: none;
+}
+
+.upper-column-left ol {
+    display: flex;
+    flex-flow: column wrap;
+    height: 100%;
+    margin-left: 10px;
+}
+
+.left-imgbox {
+    background-repeat: no-repeat;
+    background-size: cover;
+    cursor: pointer;
+    display: block;
+    height: 205px;
+}
+.charts img {
+    width: 100%;
+    height: 100%;
+}
+.game-dates {
+    bottom: 5px;
+    display: block;
+    font-size: 2em;
+    position: absolute;
+    right: 1vw;
+    z-index: 30;
+}
+
+.news li {
+    cursor: pointer;
+    height: 12vw;
+    margin: 0 7px 14px 0px;
+    overflow: hidden;
+    position: relative;
+    -webkit-box-shadow: -1px 3px 52px 12px rgba(0,0,0,0.75);
+    -moz-box-shadow: -1px 3px 52px 12px rgba(0,0,0,0.75);
+    box-shadow: -1px 3px 52px 12px rgba(0,0,0,0.75);
+    transition: ease-out 0.5s;
+}
+
+.news li img {
+    height: auto;
+    width: 100%;
+}
+
+.top-games h2 {
+    padding-top: 2.3vw
+}
+
+.tg { /*einzelne elemente der top games*/
+    align-items: center;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.76) 0%, rgba(0, 0, 0, 0) 100%);
+    display: flex;
+    flex-flow: row wrap;
+    height: 9.19vw;
+    justify-content: space-around;
+    margin-bottom: 7px;
+    margin-left: 14px;
+    width: calc(100% - 28px);
+    -webkit-box-shadow: -1px 3px 52px 12px rgba(0,0,0,0.75);
+    -moz-box-shadow: -1px 3px 52px 12px rgba(0,0,0,0.75);
+    box-shadow: -1px 3px 52px 12px rgba(0,0,0,0.75);
+}
+
+.dbzx {
+    margin-bottom: 14px;
+}
+
+.tg-inner {
+    height: 100%;
+    width: 50%;
+}
+
+.text-tg {
+    color: white;
+    font-size: 1.2em;
+    margin: 0;
+    text-align: center;
+}
+
+.text-counter {
+    color: white;
+    font-size: 4.4vw;
+    margin: 0;
+    text-align: center;
+}
+
+.bg-text {
+    font-size: 1.2em;
+}
+
+.adv-area {
+    align-items: center;
+    display: flex;
+    height: 355px;
+    justify-content: center;
+    padding-bottom: 7px;
+    padding-top: 7px;
+}
+
+ol {
+    margin: 0;
+}
+
+.adv-area img {
+    max-width: 550px;
+    -webkit-box-shadow: -1px 3px 52px 12px rgba(0,0,0,0.75);
+    -moz-box-shadow: -1px 3px 52px 12px rgba(0,0,0,0.75);
+    box-shadow: -1px 3px 52px 12px rgba(0,0,0,0.75);
+}
+
+.tg-pic {
+    overflow-y: hidden;
+    position: relative;
+}
+
+.tg-pic img {
+    height: 100%;
+    left: 0;
+    position: absolute;
+    z-index: 30;
+}
+
+.reviews {
+    display: flex;
+    flex-flow: row wrap;
+    font-size: 1em;
+    height: auto;
+}
+
+.left-review-column {
+    color: white;
+    height: auto;
+    margin: 7px 7px 0 0;
+    padding-left: 14px;
+    text-align: left;
+    width: calc(50% - 17.5px);
+}
+
+.left-review-column p, .left-review-column h3, .topic-text {
+    font-family: mr-eaves-xl-modern, sans-serif;
+    font-style: normal;
+    font-weight: 200;
+    line-height: 1.8em;
+    font-size: 1.3em;
+}
+
+.right-review-column {
+    height: auto;
+    margin: 7px 0;
+    width: calc(50% - 3.5px);
+}
+
+.top-reviews {
+    height: auto;
+    padding-bottom: 28px;
+    width: 100%;
+}
+
+.highlighted-reviews {
+    height: auto;
+    padding: 14px 0;
+}
+
+.highlighted-reviews ol {
+    display: flex;
+    height: 12vw;
+    justify-content: space-around;
+    overflow: hidden;
+    padding: 0 1.5%;
+    width: 97%;
+}
+
+.highlighted-reviews li img:not(.triangle) {
+    height: auto;
+    width: 18vw;
+}
+
+.highlighted-reviews li {
+    position: relative;
+}
+
+.news-titles {
+    bottom: 5px;
+    font-size: 2em;
+    left: 15px;
+    margin: 0;
+    position: absolute;
+    z-index: 30;
+}
+
+.burgerico {
+    display: none;
+}
+
+.pokemongo {
+    float: right;
+    padding: 0 7px 7px 7px;
+    width: 220px;
+}
+
+.reviews h2 {
+    padding-left: 4%;
+    width: 95%;
+}
+
+.reviews h3 {
+    margin: 0;
+}
+
+.top-reviews h2 {
+    text-align: center;
+}
+
+.review-titles {
+    bottom: 5px;
+    color: white;
+    font-size: 2em;
+    left: 15px;
+    margin: 0;
+    position: absolute;
+    z-index: 30;
+}
+
+.footer {
+    background-color: black;
+    color: white;
+    height: 37vw;
+    position: relative;
+    width: 100%;
+}
+
+
+.footer-content .fa {
+    color: white;
+}
+
+.forumfooter {
+    padding-left: 1.15em;
+}
+
+.footer-content {
+    display: flex;
+    flex-flow: row wrap;
+    font-size: 1.4em;
+    height: auto;
+    justify-content: space-between;
+    margin: 0 auto;
+    padding-top: 3vw;
+    width: calc(80.972% - 14px);
+}
+
+.footer-imprint {
+    color: white;
+}
+
+.footer-content h2 {
+    font-size: 2em;
+    padding: 0 0 15px 0;
+}
+
+.footer-logos {
+    display: flex;
+    flex-flow: row wrap;
+    position: relative;
+    width: 28%;
+}
+
+.tiltgaminglogo-footer {
+    height: 9vw;
+    padding: 32px 0 26px 0px;
+    width: 21vw;
+}
+
+.copyright-logo {
+    position: absolute;
+    right: 3px;
+    top: 35%;
+    width: 1.2vw;
+}
+
+.poweredby {
+    position: absolute;
+    right: 0px;
+    top: 43%;
+    width: 5vw;
+}
+
+.ealogo {
+    height: 4vw;
+    padding-right: 1vw;
+    width: 4vw;
+}
+
+.gamestoplogo {
+    height: 4vw;
+    width: 14.7vw;
+}
+
+.ubisoftlogo {
+    height: 6vw;
+    padding-top: 24px;
+    width: 20vw;
+}
+
+
+/*unterseite borderlands 2*/
+
+.topic-text {
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8) 0%, rgba(62, 62, 62, 0.52) 100%);
+    background-color: #3E3E3E;
+    color: white;
+    font-size: 1em;
+    width: 100%;
+}
+
+.refered-page-blockquote strong {
+    font-family: mr-eaves-xl-modern, sans-serif;
+    font-size: 1em;
+    font-style: italic;
+    margin: 1em;
+    padding: 0;
+    text-align: center;
+}
+
+.topic-picture {
+    padding-top: 14px;
+    position: relative;
+}
+
+.topic-picture img {
+    margin-left: 14px;
+    width: calc(100% - 28px);
+}
+
+.topic-text p {
+    font-family: mr-eaves-xl-modern, sans-serif;
+    font-size: 1em;
+    font-style: normal;
+    font-weight: 200;
+    margin: 0;
+    padding-bottom: 3vw;
+}
+
+.topic-text p:first-child, .topic-text h2 {
+    margin-top: 0px;
+}
+
+.topic-text h2 {
+    padding-top: 1em;
+}
+
+.borderlands2gameplay {
+    float: right;
+    padding: 0 0 20px 20px;
+    width: 45%;
+}
+
+.topic-headline {
+    bottom: 14px;
+    color: white;
+    font-size: 4em;
+    left: 2vw;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    z-index: 31;
+}
+
+.topic-text section {
+    clear: both;
+    padding: 0 14px;
+}
+
+.amd-adv {
+    float: right;
+    padding: 0 0 20px 20px;
+    width: 30%;
+}
+
+.topic-text h3 {
+    font-family: mr-eaves-xl-modern, sans-serif;
+    font-size: 1.6em;
+    font-style: normal;
+    margin: 0;
+    padding: 1em 0;
+}
+
+.share-with {
+    color: white;
+    display: flex;
+    font-size: 2em;
+    position: absolute;
+    right: 14px;
+    text-align: center;
+    top: 5px;
+    z-index: 31;
+}
+
+.refered-page-blockquote {
+    text-align: center;
+}
+
+.share-with ul {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.share-with ul li a {
+    padding: 0.5vw;
+}
+
+
+/*charts unterseite*/
+
+.charts {
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8) 0%, rgba(62, 62, 62, 0.52) 100%);
+    background-color: #3E3E3E;
+    padding-top: 2vw;
+}
+
+.charts-element {
+    color: white;
+    display: flex;
+    flex-flow: row wrap;
+    padding: 3vw 14px;
+    width: calc(100% - 28px);
+}
+
+.charts-information {
+    padding-left: 1vw;
+    position: relative;
+    width: auto;
+    width: 50%;
+}
+
+.charts-image {
+    position: relative;
+    width: 43%;
+}
+
+.charts-top-image {
+    position: relative;
+    width: 50%;
+}
+
+
+.charts-top-information {
+    padding-left: 1vw;
+    position: relative;
+    width: 48%;
+}
+
+.charts-games {
+    font-size: 6em;
+    margin: 0;
+    padding: 0;
+}
+
+.charts-news {
+    font-size: 1.6em;
+    padding-top: 0.5vw;
+}
+
+.charts-consoles {
+    font-size: 3em;
+}
+
+.charts-top-consoles {
+    font-size: 3em;
+}
+
+.charts-top-news {
+    font-size: 1.6em;
+    padding-top: 3vw;
+}
+
+.charts-header {
+    font-size: 5em;
+}
+
+.charts-counter {
+    font-size: 13em;
+    position: absolute;
+    right: 3vw;
+    text-shadow: 0 0 0.2em rgba(238, 238, 238, 0.49);
+    top: 45%;
+}
+
+.charts-top-counter {
+    font-size: 13em;
+    position: absolute;
+    right: 7vw;
+    text-shadow: 0 0 0.2em rgba(238, 238, 238, 0.49);
+    top: -23px;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) { /*tablet grÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¶ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â¦Ãƒâ€šÃ‚Â¸e*/
+    .nomobile {
+        display: none;
+    }
+    .background {
+        background-image: none;
+    }
+    h2 {
+        font-size: 5vw;
+        padding-left: 0;
+        text-align: center;
+        width: 100%;
+    }
+    .mobile-slider-text {
+        font-size: 3vw;
+        bottom: 9vw;
+    }
+    .main-wrapper {
+        margin-top: 7.4vw;
+        width: 100%;
+    }
+    .chartsnav {
+        padding-left: 30%;
+    }
+    .slider-titles {
+        display: none;
+    }
+    .upper-column-left {
+        height: 100%;
+        width: 49%;
+    }
+    .upper-column-right {
+        width: 49%;
+    }
+    .slider-text {
+        bottom: 3vw;
+        right: 3vw;
+    }
+    .adv-area {
+        display: none;
+    }
+    .left-imgbox {
+        height: 300px;
+    }
+    .news-titles {
+        font-size: 3vw;
+    }
+    .main-navigation {
+        height: 7vw;
+    }
+    .burgerico {
+        color: white;
+        display: block;
+        font-size: 1.5em;
+    }
+    .navbar {
+        height: 100%;
+        width: 92%;
+    }
+    .navico {
+        font-size: 1.8em;
+    }
+    .logo {
+        height: 6vw;
+        width: auto;
+    }
+    .footer {
+        height: 50vw;
+    }
+    .news li {
+        cursor: pointer;
+        height: 16.3vw;
+        /* margin: 7px 7px 0px; */
+        overflow: hidden;
+        position: relative;
+        width: 100%;
+    }
+    .game-dates {
+        font-size: 3vw;
+    }
+
+    .topic-text:last-child {
+        background: #3E3E3E;
+    }
+    .tg {
+        height: 13vw;
+    }
+    .text-tg {
+        font-size: 3vw;
+    }
+    .text-counter {
+        font-size: 6vw;
+    }
+    .footer-content {
+        font-size: 2vw;
+    }
+    .footer-content h2 {
+        font-size: 1em;
+        padding: 0 0 15px 0;
+        text-align: left;
+    }
+}
+@media screen and (max-width: 767px) and (min-width: 0px) { /*smartphone grÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¶ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â¦Ãƒâ€šÃ‚Â¸e*/
+    h2 {
+        font-size: 3em;
+        padding-left: 0;
+        text-align: center;
+        width: 100%;
+    }
+    .background {
+        background-image: none;
+    }
+    .upcoming-titles {
+        font-size: 1.4em;
+    }
+    .upper-column-left ol {
+        height: 100%;
+    }
+    .nomobile {
+        display: none;
+    }
+    .main-wrapper {
+        margin-top: 13vw;
+        width: 100%;
+    }
+    .chartsnav {
+        padding-left: 14%;
+    }
+    .slider-titles {
+        display: none;
+    }
+    .upper-column-left {
+        height: 100%;
+        margin: 0;
+        width: 100%;
+    }
+    .upper-column-right {
+        height: 100%;
+        width: 100%;
+    }
+    .upper-column-right ol {
+        height: 75%;
+    }
+    .left-imgbox {
+        height: 41vw;
+        left: 0;
+        margin: 0 0 7px 0;
+        top: 0;
+        width: 100%;
+    }
+    .news-titles {
+        font-size: 1.4em;
+    }
+    .main-navigation {
+        background: black;
+        background-position: 0;
+        height: 13vw;
+        border-bottom: solid;
+        border-width: 3px;
+        border-bottom-color: #005677;
+    }
+    .burgerico {
+        color: white;
+        display: block;
+        font-size: 1.5em;
+    }
+    .navbar {
+        height: 100%;
+        width: 92%;
+    }
+    .navico {
+        font-size: 5.1vw;
+    }
+    .logo {
+        height: 10vw;
+        width: auto;
+    }
+    .slider {
+        width: 100%;
+    }
+    .footer {
+        height: 63vw;
+        margin-top: 0vw;
+    }
+    .footer-content h2 {
+        font-size: 1em;
+        text-align: left;
+    }
+    .slider-text {
+        font-size: 4em;
+    }
+    .tg {
+        font-size: 2em;
+        height: 20vw;
+    }
+    .news li {
+        cursor: pointer;
+        height: 33vw;
+        margin: 0 0 7px 0;
+        overflow: hidden;
+        position: relative;
+        width: 100%;
+    }
+    .game-dates {
+        font-size: 1.5em;
+    }
+    .topic-picture img {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+    }
+    .topic-picture {
+        padding: 0;
+    }
+    .topic-headline {
+        font-size: 6em;
+    }
+    .borderlands2gameplay {
+        width: 100%;
+    }
+    .topic-text section {
+        padding: 0 3vw;
+    }
+    .topic-text {
+        font-size: 3em;
+    }
+    h4 {
+        font-size: 5em;
+        padding: 4vw;
+        text-align: center;
+    }
+    .topic-text:last-child {
+        background: #3E3E3E;
+    }
+    .text-tg {
+        font-size: 2.8vw;
+    }
+    .text-counter {
+        font-size: 1.1em;
+    }
+    .mobile-slider-text {
+        bottom: 1vw;
+        font-size: 4vw;
+        width: 42vw;
+    }
+    .footer-content {
+        font-size: 3vw;
+    }
+    h4 {
+        font-size: 4em;
+        padding: 2vw;
+        text-align: center;
+    }
+    .main-navigation ul li a {
+        padding: 0;
+    }
+    .charts-information, .charts-top-information {
+        position: initial;
+        width: 100%;
+    }
+    .charts-image, .charts-top-image {
+        width: 100%;
+        /* overflow: hidden; */
+    }
+    .charts-element {
+        padding: 2vw 0;
+        padding-bottom: 9vw;
+        position: relative;
+        width: 100%;
+    }
+    .charts-games {
+        font-size: 8em;
+        left: 6px;
+        position: absolute;
+        top: 3vw;
+        z-index: 30;
+    }
+    .charts-consoles, .charts-top-consoles {
+        font-size: 5em;
+        left: 28px;
+        position: absolute;
+        top: 11vw;
+    }
+    .charts-top-news, .charts-news {
+        font-size: 4em;
+        padding: 1vw 0 10vw 1vw;
+    }
+    .charts-header {
+        font-size: 11em;
+        padding-top: 3vw;
+        position: relative;
+    }
+    .charts-top-counter {
+        right: 3vw;
+        top: 44vw;
+    }
+}
+@media screen and (min-width: 2200px) { /*fÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¼r groÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â¦Ãƒâ€šÃ‚Â¸e bildschirme*/
+    .main-wrapper {
+        margin-top: 15em;
+        width: 1700px;
+    }
+    .background {
+        background: url("../img/background.png");
+        background-position: 0 58px;
+        background-size: cover;
+        width: 100%
+    }
+    .slider-text {
+        bottom: 1vw;
+        font-size: 3em;
+    }
+    .navbar {
+        font-size: 1.6em;
+    }
+
+    .adv-area img {
+        max-width: 40%;
+    }
+    .news-titles, .upcoming-titles, .review-titles {
+        font-size: 2em;
+    }
+    .reviews {}
+    .navbar {
+        width: 1700px;
+    }
+    .footer-content {
+        width: 1700px
+    }
+    .tiltgaminglogo-footer {
+        height: 200px;
+        width: 460px
+    }
+    .ealogo {
+        height: 100px;
+        width: 100px;
+    }
+    .gamestoplogo {
+        width: 342px;
+    }
+    .ubisoftlogo {
+        height: 140px;
+        width: 500px;
+    }
+    .poweredby {
+        width: 80px;
+    }
+    .game-dates {
+        font-size: 1.5em;
+    }
+    .highlighted-reviews ol {
+        height: 268px;
+    }
+    .highlighted-reviews li img:not(.triangle){
+        height: 267px;
+        width: 387px;
+    }
+    .highlighted-reviews {
+        height: 390px;
+    }
+    .topic-text p {
+        font-size: 0.9em;
+    }
+    .news li img {
+        left: -0.5vw;
+        width: 104%;
+    }
+    .slider-circles {
+        font-size: 2.5em;
+        width: 180px;
+    }
+    .news li {
+        height: 293px;
+    }
+    h2 {
+        font-size: 5em;
+        margin: 0.5em 0.25em 0;
+    }
+    .top-games h2 {
+        padding-top: 0;
+    }
+    .tg {
+        height: 15.58em;
+    }
+    .text-tg {
+        font-size: 2.5em
+    }
+    .text-counter {
+        font-size: 7em;
+    }
+    .reviews h2 {
+        font-size: 5em;
+    }
+    .mobile-slider-text {
+        bottom: 16em;
+        font-size: 3em;
+    }
+    .charts-header {
+        font-size: 7em;
+        padding-top: 0.5em;
+    }
+    .charts-games {
+        font-size: 6em;
+    }
+    .charts-top-consoles, .charts-consoles {
+        font-size: 4em;
+    }
+    .charts-top-news, .charts-news {
+        font-size: 2.5em;
+    }
+    .slider-elements-text {
+        top: 75em;
+    }
+    .charts-top-counter {
+        right: 90px;
+        top: -20%;
+        font-size: 23em;
+    }
+    .charts-counter {
+        font-size: 23em;
+        position: absolute;
+        right: 0em;
+        top: 50%;
+    }
+    .triangle {
+        width: 46px;
+    }
+}
+@keyframes progress-line { /*animation des ladebalkens im slider*/
+    /* reset moment*/
+    0%, 25%, 50%, 75%, 100% {
+        opacity: 0;
+        width: 0%;
+    }
+    /*start*/
+    3%, 28%, 53%, 78% {
+        opacity: 0.3;
+        width: 0%;
+    }
+    /*goes on*/
+    22%, 46%, 72%, 97% {
+        opacity: 0.8;
+        width: 100%;
+    }
+    /*end of path*/
+    23%, 48%, 73%, 99% {
+        opacity: 0.05;
+        width: 100%;
+    }
+    /*new cirle*/
+    24%, 49%, 74%, 99% {
+        opacity: 0;
+        width: 100%;
+    }
+}
+@keyframes active-slider1 { /*slider animation: farbbewchsel bei 1. slider title*/
+    0% {
+        color: white;
+    }
+    2% {
+        color: red;
+    }
+    24% {
+        color: red;
+    }
+    27% {
+        color: white;
+    }
+}
+@keyframes active-slider2 { /*slider animation: farbbewchsel bei 2. slider title*/
+    25% {
+        color: white;
+    }
+    27% {
+        color: red;
+    }
+    49% {
+        color: red;
+    }
+    52% {
+        color: white;
+    }
+}
+@keyframes active-slider3 { /*slider animation: farbbewchsel bei 3. slider title*/
+    50% {
+        color: white;
+    }
+    52% {
+        color: red;
+    }
+    74% {
+        color: red;
+    }
+    77% {
+        color: white;
+    }
+}
+@keyframes active-slider4 { /*slider animation: farbbewchsel bei 4. slider title*/
+    75% {
+        color: white;
+    }
+    77% {
+        color: red;
+    }
+    99% {
+        color: red;
+    }
+    100% {
+        color: white;
+    }
+}
+@keyframes main-slider { /*slider hauptanimation fÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¼r images*/
+    0% {
+        left: 0%;
+        -webkit-transform: -webkit-translateX (0%);
+        transform: scale(1.00, 1.00)translateX(0);
+    }
+    22% {
+        left: 0%;
+        -webkit-transform: -webkit-translateX (1%);
+        transform: scale(1.03, 1.03) translateX(1%);
+        transform-origin: center;
+    }
+    25% {
+        left: -100%;
+        -webkit-transform: -webkit-translateX (0%);
+        transform: scale(1.00, 1.00)translateX(0);
+    }
+    47% {
+        left: -100%;
+        -webkit-transform: -webkit-translateX (0.5%);
+        transform: scale(1.03, 1.03) translateX(0.5%);
+        transform-origin: center;
+    }
+    50% {
+        left: -200%;
+        -webkit-transform: -webkit-translateX (0%);
+        transform: scale(1.00, 1.00)translateX(0);
+    }
+    72% {
+        left: -200%;
+        -webkit-transform: -webkit-translateX (0.25%);
+        transform: scale(1.03, 1.03) translateX(0.25%);
+        transform-origin: center;
+    }
+    75% {
+        left: -300%;
+        -webkit-transform: -webkit-translateX (0%);
+        transform: scale(1.00, 1.00)translateX(0);
+    }
+    97% {
+        left: -300%;
+        -webkit-transform: -webkit-translateX (-0.5%);
+        transform: scale(1.03, 1.03) translateX(-0.5%);
+        transform-origin: center;
+    }
+    100% {
+        left: -400%;
+        -webkit-transform: -webkit-translateX (0%);
+        transform: scale(1.00, 1.00)translateX(0);
+    }
+}
+@keyframes fade-in { /*fÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¼r das fade in vom ersten slider-text*/
+    0% {
+        opacity: 0;
+    }
+    3% {
+        opacity: 1;
+    }
+}
+@keyframes main-slider-text { /*text der ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¼ber der animation slided*/
+
+    0% {
+        bottom: -5%;
+        right: 35%;
+    }
+    22% {
+        right: 40%;
+    }
+    25% {
+        right: 135%;
+    }
+    47% {
+        right: 142%;
+    }
+    50% {
+        right: 240%;
+    }
+    72% {
+        right: 247%;
+    }
+    75% {
+        right: 390%;
+    }
+    97% {
+        right: 400%;
+    }
+    100% {
+        right: 450%;
+    }
+}

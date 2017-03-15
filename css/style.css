@@ -102,7 +102,7 @@ nav ul li a:hover, a:hover, .upcoming-titles:hover, .news-titles:hover, .game-da
 .background {
     background-color: black;
     position: absolute;
-    background-image: url("../img/background.png");
+    background-image: url("../img/Background.png");
 
     /*damit das image gefixed ist aber man dennochscrollen kann*/
     background-size: contain;

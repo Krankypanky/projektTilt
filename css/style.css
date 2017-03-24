@@ -2,6 +2,71 @@
     font-family: alternate-gothic-no-1-d, sans-serif;
     font-style: normal;
     font-weight: 400;
+    text-shadow: 0 0 black;
+}
+
+label#gender {
+    width: 27%;
+    padding-left: 13%;
+}
+.wronginput {
+    color: orangered;
+}
+.formsubmit{
+    margin-left: 38%;
+    background-color: black;
+    border-radius: 5px;
+    border-style: none;
+    font-size: 1em;
+    color: white;
+    padding: 0.3em 1em;
+}
+
+select#logintitle {
+
+    border: solid black 1px;
+}
+
+
+
+.navbar label:not(#gender) {
+    width: 40%;
+}
+
+#logintitle {
+    font-size: 0.8em;
+}
+.formtextinput {
+    font-size: 0.9em;
+    width: 10em;
+
+    margin-right: 2em;
+    border-radius: 5px;
+}
+.textinput0 {
+}
+
+
+.form-column-style {display: flex;border-top-style: solid;border-width: 1px;padding: 0.3em 0;}
+
+.jsformularinputs {
+    padding-left: 1em;
+    padding-top: 1em;
+}
+.jsnavbutton i {
+    padding: 0.9em 0.75em 0.9em;
+    font-size: 1em;
+}
+.jsformularinfo {
+    text-decoration: underline;
+    margin: 1em 0 0.5em 43%;
+    font-size: 1.3em;
+    display: block;}
+
+.jsformularheadline {
+    text-align: center;
+    font-size: 1.6em;
+    margin: 0.5vw 0 0;
 }
 
 ::-webkit-scrollbar {
@@ -32,7 +97,8 @@ h4 {
     margin: 0;
     padding: 2vw 0 1vw 0;
 }
-/*gradient ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¼ber den meisten IMGs - gesetzt als pseudo*/
+
+/*gradient uber den meisten IMGs - gesetzt als pseudo*/
 .charts-top-image:after, .charts-image:after, .slider:after, .news li:after, .top-reviews-element:after, .topic-picture:after {
     background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.51) 95%, rgba(0, 0, 0, 0.51) 96%, rgba(0, 0, 0, 0.51) 100%);
     content: '';
@@ -44,15 +110,17 @@ h4 {
     top: 0;
     width: 100%;
 }
+
 .news li:hover::after {
     visibility: hidden;
     transition: 0s;
 }
+
 .news li a:hover {
-    transition:0s ease-in;
+    transition: 0s ease-in;
 }
 
-.progress-bar { /*progress bar im slider fÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¼r anzeige des fortschritts*/
+.progress-bar { /*progress bar im slider fur anzeige des fortschritts*/
     animation: progress-line 30s ease-out infinite;
     background: #000;
     height: 5px;
@@ -62,7 +130,7 @@ h4 {
     z-index: 50;
 }
 
-.slider figure picture img {
+.css-img-slideshow {
     float: left; /* damit sich die images nebeneinander anordnen und auserhalb des flows sind*/
     width: 20%; /*weil 5 images die nebeneinander sind*/
 }
@@ -73,14 +141,53 @@ h4 {
     width: 500%;
 }
 
+.JSslider-elements {
+    width: 100%;
+}
+.JSslider-text {
+    display: block;
+    position: absolute;
+    bottom: 5vw;
+    left: 63%;
+    z-index: 40;
+    font-size: 2.3vw;
+}
+
+.Jsactiveslider {
+    display: block;
+}
+.JSslider-elements-text{
+
+}
+.js-circle-not-active{
+    color: white;
+}
+.js-circle-active{
+    color: red;
+}
+.Jslogin{
+    position: absolute;
+    background-color: rgba(0, 100, 126, 0.7);
+    top: 3em;
+    right: 9.5%;
+    width: 375px;
+    display: flex;
+    height: auto;
+    flex-flow: column wrap;
+    color: white;
+    padding: 2vw;
+    border-radius: 0 0 10px 10px;
+}
 .slider-elements-text {
     animation: 30s main-slider-text infinite;
     position: relative;
     top: 40vw;
 }
+
 .slider-elements-text h3 {
     width: 40vw;
 }
+
 a:hover {
     color: #EB3323;
 }
@@ -89,20 +196,21 @@ figure {
     margin: 0;
 }
 
-nav ul li a:hover, a:hover, .upcoming-titles:hover, .news-titles:hover, .game-dates:hover, .review-titles:hover,  {
+nav ul li a:hover, a:hover, .upcoming-titles:hover, .news-titles:hover, .game-dates:hover, .review-titles:hover, {
     transition: 0s;
     transform: scale(1.1);
 
-
 }
+
 .news li a:hover, nav ul li a:hover, .news li:hover {
     transform: scale(1.02);
     transition: 0.1s;
 }
+
 .background {
     background-color: black;
     position: absolute;
-    background-image: url("../img/Background.png");
+    background-image: url("../img/background.png");
 
     /*damit das image gefixed ist aber man dennochscrollen kann*/
     background-size: contain;
@@ -113,6 +221,7 @@ body {
     margin: 0;
     min-height: 100vh;
     position: relative;
+
 }
 
 a {
@@ -128,11 +237,14 @@ ul, ol {
 .news li:hover::after {
     transition: 0s;
 }
+
 .topic-text h4 {
     padding-left: 1vw;
 }
+
 .main-navigation {
     background: black;
+    /* background: linear-gradient(45deg, #000000 10%,#005677 10%,#005677 16%,#000000 16%,#000000 16%,#000000 36%); */
     box-shadow: 0px 4px 59px 0px rgba(0, 0, 0, 0.75);
     height: 60px;
     position: fixed;
@@ -141,7 +253,7 @@ ul, ol {
     border-bottom: solid 2px #005677;
 }
 
-.main-navigation ul li a {
+.main-navigation ul li a:not(.jsnavbutton) {
     color: white;
     display: block;
     padding: 20px 1.30vw 10px 1.30vw;
@@ -161,6 +273,56 @@ ul, ol {
 .logo {
     padding-top: 6px;
     width: 101px;
+}
+
+.visiblebyclick {
+    display: none;
+
+}
+
+.dropdownsearchbutton {
+    background-color: black;
+    border-style: none;
+    color: white;
+    height: 2.3vw;
+    border-radius: 5px 0 0 5px;
+    margin-top: 0.6vw;
+    margin-left: 1vw;
+    font-size: 1.5vw;
+    width: 5vw;
+    padding-top: 4px;
+}
+
+.dropdown {
+    position: absolute;
+    width: 36vw;
+    height: 3.6vw;
+    background-color: rgba(0, 100, 126, 0.7);
+    top: 61px;
+    left: 67%;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-bottom-color: #005677;
+    border-radius: 0 0 0 7px;
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.searchnav {
+    /* position: relative; */
+}
+
+.newsearch {
+    width: 16vw;
+    margin-top: 0.6vw;
+    border-style: none;
+    height: 2.1vw;
+    background-color: lightblue;
+    border-radius: 0 4px 4px 0;
+    font-size: 1.2vw;
+    font-family: mr-eaves-xl-modern, sans-serif;
+    padding-left: 13px;
+    box-shadow: inset 0px 0 3px #000000;
 }
 
 .upcoming-consoles {
@@ -198,19 +360,20 @@ ul, ol {
 .slider {
     margin: 0 auto;
     overflow: hidden;
+    height: 29vw;
     position: relative;
     width: 100%;
-    -webkit-box-shadow: -1px 3px 52px 12px rgba(0,0,0,0.75);
-    -moz-box-shadow: -1px 3px 52px 12px rgba(0,0,0,0.75);
-    box-shadow: -1px 3px 52px 12px rgba(0,0,0,0.75);
+    -webkit-box-shadow: -1px 3px 52px 12px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: -1px 3px 52px 12px rgba(0, 0, 0, 0.75);
+    box-shadow: -1px 3px 52px 12px rgba(0, 0, 0, 0.75);
 }
 
-.slider-circles { /*cirles im slider fÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¼r die anzeige des aktiven sliders*/
+.slider-circles { /*cirles im slider - fur die anzeige des aktiven sliders*/
     bottom: 1vw;
     color: white;
     display: flex;
     flex-flow: row wrap;
-    font-size: 1.7vw;
+    font-size: 2vw;
     justify-content: space-around;
     position: absolute;
     right: 45%;
@@ -218,21 +381,26 @@ ul, ol {
     z-index: 30;
 }
 
-.slider1 {
+#remove {
+
+}
+
+.slider0 {
     animation: active-slider1 30s infinite;
 }
 
-.slider2 {
+.slider1 {
     animation: active-slider2 30s infinite;
 }
 
-.slider3 {
+.slider2 {
     animation: active-slider3 30s infinite;
 }
 
-.slider4 {
+.slider3 {
     animation: active-slider4 30s infinite;
 }
+
 /* von hier: musste seperat platziert werden wegen der keyframe animation des textes*/
 .slider-text-first {
     bottom: 13vw;
@@ -259,9 +427,11 @@ ul, ol {
     position: absolute;
     z-index: 10;
 }
+
 .triangle {
     width: 2.1vw;
 }
+
 .slider-text-fourth {
     bottom: 12vw;
     font-size: 2.8vw;
@@ -290,6 +460,7 @@ ul, ol {
     margin: 0;
     padding-top: 10px;
 }
+
 /*bis hier*/
 .titles {
     background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, rgba(62, 62, 62, 0.52) 100%);
@@ -349,11 +520,16 @@ ul {
     list-style-type: none;
 }
 
+ul.signup {
+    display: flex;
+    flex-flow: column wrap;
+}
+
 .upper-column-left ol {
     display: flex;
     flex-flow: column wrap;
     height: 100%;
-    margin-left: 10px;
+
 }
 
 .left-imgbox {
@@ -363,10 +539,12 @@ ul {
     display: block;
     height: 205px;
 }
+
 .charts img {
     width: 100%;
     height: 100%;
 }
+
 .game-dates {
     bottom: 5px;
     display: block;
@@ -382,9 +560,9 @@ ul {
     margin: 0 7px 14px 0px;
     overflow: hidden;
     position: relative;
-    -webkit-box-shadow: -1px 3px 52px 12px rgba(0,0,0,0.75);
-    -moz-box-shadow: -1px 3px 52px 12px rgba(0,0,0,0.75);
-    box-shadow: -1px 3px 52px 12px rgba(0,0,0,0.75);
+    -webkit-box-shadow: -1px 3px 52px 12px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: -1px 3px 52px 12px rgba(0, 0, 0, 0.75);
+    box-shadow: -1px 3px 52px 12px rgba(0, 0, 0, 0.75);
     transition: ease-out 0.5s;
 }
 
@@ -407,9 +585,9 @@ ul {
     margin-bottom: 7px;
     margin-left: 14px;
     width: calc(100% - 28px);
-    -webkit-box-shadow: -1px 3px 52px 12px rgba(0,0,0,0.75);
-    -moz-box-shadow: -1px 3px 52px 12px rgba(0,0,0,0.75);
-    box-shadow: -1px 3px 52px 12px rgba(0,0,0,0.75);
+    -webkit-box-shadow: -1px 3px 52px 12px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: -1px 3px 52px 12px rgba(0, 0, 0, 0.75);
+    box-shadow: -1px 3px 52px 12px rgba(0, 0, 0, 0.75);
 }
 
 .dbzx {
@@ -454,9 +632,9 @@ ol {
 
 .adv-area img {
     max-width: 550px;
-    -webkit-box-shadow: -1px 3px 52px 12px rgba(0,0,0,0.75);
-    -moz-box-shadow: -1px 3px 52px 12px rgba(0,0,0,0.75);
-    box-shadow: -1px 3px 52px 12px rgba(0,0,0,0.75);
+    -webkit-box-shadow: -1px 3px 52px 12px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: -1px 3px 52px 12px rgba(0, 0, 0, 0.75);
+    box-shadow: -1px 3px 52px 12px rgba(0, 0, 0, 0.75);
 }
 
 .tg-pic {
@@ -576,10 +754,11 @@ ol {
     background-color: black;
     color: white;
     height: 37vw;
+    background: linear-gradient(45deg, #000000 10%,#005677 10%,#005677 16%,#000000 16%,#000000 16%,#000000 36%);
     position: relative;
     width: 100%;
+    border-top: #005677 solid 3px;
 }
-
 
 .footer-content .fa {
     color: white;
@@ -652,7 +831,6 @@ ol {
     padding-top: 24px;
     width: 20vw;
 }
-
 
 /*unterseite borderlands 2*/
 
@@ -760,7 +938,6 @@ ol {
     padding: 0.5vw;
 }
 
-
 /*charts unterseite*/
 
 .charts {
@@ -793,7 +970,6 @@ ol {
     position: relative;
     width: 50%;
 }
-
 
 .charts-top-information {
     padding-left: 1vw;
@@ -845,83 +1021,112 @@ ol {
     top: -23px;
 }
 
-@media screen and (min-width: 768px) and (max-width: 1024px) { /*tablet grÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¶ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â¦Ãƒâ€šÃ‚Â¸e*/
+@media screen and (min-width: 768px) and (max-width: 1024px) {
     .nomobile {
         display: none;
+    }
+    .jsnavbutton i {
+        font-size: 1.5em;
+    }
+    .Jslogin {
+        font-size: 2vw;
+        right: 0;
+        top: 7vw;
+
     }
     .background {
         background-image: none;
     }
+
+    .upper-column-left ol {
+        margin-left: 10px;
+    }
+
     h2 {
         font-size: 5vw;
         padding-left: 0;
         text-align: center;
         width: 100%;
     }
+
     .mobile-slider-text {
         font-size: 3vw;
         bottom: 9vw;
     }
+
     .main-wrapper {
         margin-top: 7.4vw;
         width: 100%;
     }
+
     .chartsnav {
         padding-left: 30%;
     }
+
     .slider-titles {
         display: none;
     }
+
     .upper-column-left {
         height: 100%;
         width: 49%;
     }
+
     .upper-column-right {
         width: 49%;
     }
+
     .slider-text {
         bottom: 3vw;
         right: 3vw;
     }
+
     .adv-area {
         display: none;
     }
+
     .left-imgbox {
         height: 300px;
     }
+
     .news-titles {
         font-size: 3vw;
     }
+
     .main-navigation {
         height: 7vw;
     }
+
     .burgerico {
         color: white;
         display: block;
         font-size: 1.5em;
     }
+
     .navbar {
         height: 100%;
         width: 92%;
     }
-    .navico {
-        font-size: 1.8em;
-    }
+
+
+
     .logo {
         height: 6vw;
         width: auto;
     }
+
     .footer {
         height: 50vw;
     }
+
     .news li {
         cursor: pointer;
         height: 16.3vw;
-        /* margin: 7px 7px 0px; */
         overflow: hidden;
         position: relative;
         width: 100%;
     }
+
     .game-dates {
         font-size: 3vw;
     }
@@ -929,65 +1134,83 @@ ol {
     .topic-text:last-child {
         background: #3E3E3E;
     }
+
     .tg {
         height: 13vw;
     }
+
     .text-tg {
         font-size: 3vw;
     }
+
     .text-counter {
         font-size: 6vw;
     }
+
     .footer-content {
         font-size: 2vw;
     }
+
     .footer-content h2 {
         font-size: 1em;
         padding: 0 0 15px 0;
         text-align: left;
     }
 }
-@media screen and (max-width: 767px) and (min-width: 0px) { /*smartphone grÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¶ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â¦Ãƒâ€šÃ‚Â¸e*/
+
+@media screen and (max-width: 767px) and (min-width: 0px) {
+
     h2 {
         font-size: 3em;
         padding-left: 0;
         text-align: center;
         width: 100%;
     }
+    .jsnavbutton i {font-size: 5vw;}
     .background {
         background-image: none;
     }
+
     .upcoming-titles {
         font-size: 1.4em;
     }
+
     .upper-column-left ol {
         height: 100%;
     }
+
     .nomobile {
         display: none;
     }
+
     .main-wrapper {
         margin-top: 13vw;
         width: 100%;
     }
+
     .chartsnav {
         padding-left: 14%;
     }
+
     .slider-titles {
         display: none;
     }
+
     .upper-column-left {
         height: 100%;
         margin: 0;
         width: 100%;
     }
+
     .upper-column-right {
         height: 100%;
         width: 100%;
     }
+
     .upper-column-right ol {
         height: 75%;
     }
+
     .left-imgbox {
         height: 41vw;
         left: 0;
@@ -995,9 +1218,11 @@ ol {
         top: 0;
         width: 100%;
     }
+
     .news-titles {
         font-size: 1.4em;
     }
+
     .main-navigation {
         background: black;
         background-position: 0;
@@ -1006,40 +1231,49 @@ ol {
         border-width: 3px;
         border-bottom-color: #005677;
     }
+
     .burgerico {
         color: white;
         display: block;
-        font-size: 1.5em;
+        font-size: 5vw;
+        padding-left: 3vw;
     }
+
     .navbar {
         height: 100%;
         width: 92%;
     }
-    .navico {
-        font-size: 5.1vw;
-    }
+
+
     .logo {
         height: 10vw;
         width: auto;
     }
+
     .slider {
         width: 100%;
+        height: 63vw;
     }
+
     .footer {
         height: 63vw;
         margin-top: 0vw;
     }
+
     .footer-content h2 {
         font-size: 1em;
         text-align: left;
     }
+
     .slider-text {
         font-size: 4em;
     }
+
     .tg {
         font-size: 2em;
         height: 20vw;
     }
+
     .news li {
         cursor: pointer;
         height: 33vw;
@@ -1048,73 +1282,92 @@ ol {
         position: relative;
         width: 100%;
     }
+
     .game-dates {
         font-size: 1.5em;
     }
+
     .topic-picture img {
         margin: 0;
         padding: 0;
         width: 100%;
     }
+
     .topic-picture {
         padding: 0;
     }
+
     .topic-headline {
         font-size: 6em;
     }
+
     .borderlands2gameplay {
         width: 100%;
     }
+
     .topic-text section {
         padding: 0 3vw;
     }
+
     .topic-text {
         font-size: 3em;
     }
+
     h4 {
         font-size: 5em;
         padding: 4vw;
         text-align: center;
     }
+
     .topic-text:last-child {
         background: #3E3E3E;
     }
+
     .text-tg {
         font-size: 2.8vw;
     }
+
     .text-counter {
         font-size: 1.1em;
     }
+
     .mobile-slider-text {
         bottom: 1vw;
         font-size: 4vw;
         width: 42vw;
     }
+
     .footer-content {
         font-size: 3vw;
     }
+
     h4 {
         font-size: 4em;
         padding: 2vw;
         text-align: center;
     }
+
     .main-navigation ul li a {
         padding: 0;
     }
+
     .charts-information, .charts-top-information {
         position: initial;
         width: 100%;
     }
+
     .charts-image, .charts-top-image {
         width: 100%;
-        /* overflow: hidden; */
+
     }
+
     .charts-element {
         padding: 2vw 0;
         padding-bottom: 9vw;
         position: relative;
         width: 100%;
     }
+
     .charts-games {
         font-size: 8em;
         left: 6px;
@@ -1122,41 +1375,61 @@ ol {
         top: 3vw;
         z-index: 30;
     }
+
     .charts-consoles, .charts-top-consoles {
         font-size: 5em;
         left: 28px;
         position: absolute;
         top: 11vw;
     }
+
     .charts-top-news, .charts-news {
         font-size: 4em;
         padding: 1vw 0 10vw 1vw;
     }
+
     .charts-header {
         font-size: 11em;
         padding-top: 3vw;
         position: relative;
     }
+
     .charts-top-counter {
         right: 3vw;
         top: 44vw;
     }
+    .Jslogin {
+        top: 13vw;
+        left: 0;
+        width: 89%;
+        display: flex;
+        flex-flow: column wrap;
+        color: white;
+        padding: 6vw;
+        border-radius: 0 0 10px 10px;
+        font-size: 3.6vw;
+    }
 }
-@media screen and (min-width: 2200px) { /*fÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¼r groÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â¦Ãƒâ€šÃ‚Â¸e bildschirme*/
+
+@media screen and (min-width: 2200px) {
+    /*grosse bildschirme*/
     .main-wrapper {
         margin-top: 15em;
         width: 1700px;
     }
+
     .background {
         background: url("../img/background.png");
         background-position: 0 58px;
         background-size: cover;
         width: 100%
     }
+
     .slider-text {
         bottom: 1vw;
         font-size: 3em;
     }
+
     .navbar {
         font-size: 1.6em;
     }
@@ -1164,115 +1437,149 @@ ol {
     .adv-area img {
         max-width: 40%;
     }
+
     .news-titles, .upcoming-titles, .review-titles {
         font-size: 2em;
     }
-    .reviews {}
+
+    .reviews {
+    }
+
     .navbar {
         width: 1700px;
     }
+
     .footer-content {
         width: 1700px
     }
+
     .tiltgaminglogo-footer {
         height: 200px;
         width: 460px
     }
+
     .ealogo {
         height: 100px;
         width: 100px;
     }
+
     .gamestoplogo {
         width: 342px;
     }
+
     .ubisoftlogo {
         height: 140px;
         width: 500px;
     }
+
     .poweredby {
         width: 80px;
     }
+
     .game-dates {
         font-size: 1.5em;
     }
+
     .highlighted-reviews ol {
         height: 268px;
     }
-    .highlighted-reviews li img:not(.triangle){
+
+    .highlighted-reviews li img:not(.triangle) {
         height: 267px;
         width: 387px;
     }
+
     .highlighted-reviews {
         height: 390px;
     }
+
     .topic-text p {
         font-size: 0.9em;
     }
+
     .news li img {
         left: -0.5vw;
         width: 104%;
     }
+
     .slider-circles {
         font-size: 2.5em;
         width: 180px;
     }
+
     .news li {
         height: 293px;
     }
+
     h2 {
         font-size: 5em;
         margin: 0.5em 0.25em 0;
     }
+
     .top-games h2 {
         padding-top: 0;
     }
+
     .tg {
         height: 15.58em;
     }
+
     .text-tg {
         font-size: 2.5em
     }
+
     .text-counter {
         font-size: 7em;
     }
+
     .reviews h2 {
         font-size: 5em;
     }
+
     .mobile-slider-text {
         bottom: 16em;
         font-size: 3em;
     }
+
     .charts-header {
         font-size: 7em;
         padding-top: 0.5em;
     }
+
     .charts-games {
         font-size: 6em;
     }
+
     .charts-top-consoles, .charts-consoles {
         font-size: 4em;
     }
+
     .charts-top-news, .charts-news {
         font-size: 2.5em;
     }
+
     .slider-elements-text {
         top: 75em;
     }
+
     .charts-top-counter {
         right: 90px;
         top: -20%;
         font-size: 23em;
     }
+
     .charts-counter {
         font-size: 23em;
         position: absolute;
         right: 0em;
         top: 50%;
     }
+
     .triangle {
         width: 46px;
     }
 }
+
 @keyframes progress-line { /*animation des ladebalkens im slider*/
     /* reset moment*/
     0%, 25%, 50%, 75%, 100% {
@@ -1300,6 +1607,7 @@ ol {
         width: 100%;
     }
 }
+
 @keyframes active-slider1 { /*slider animation: farbbewchsel bei 1. slider title*/
     0% {
         color: white;
@@ -1314,6 +1622,7 @@ ol {
         color: white;
     }
 }
+
 @keyframes active-slider2 { /*slider animation: farbbewchsel bei 2. slider title*/
     25% {
         color: white;
@@ -1328,6 +1637,7 @@ ol {
         color: white;
     }
 }
+
 @keyframes active-slider3 { /*slider animation: farbbewchsel bei 3. slider title*/
     50% {
         color: white;
@@ -1342,6 +1652,7 @@ ol {
         color: white;
     }
 }
+
 @keyframes active-slider4 { /*slider animation: farbbewchsel bei 4. slider title*/
     75% {
         color: white;
@@ -1356,11 +1667,12 @@ ol {
         color: white;
     }
 }
-@keyframes main-slider { /*slider hauptanimation fÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¼r images*/
+
+@keyframes main-slider { /*slider hauptanimation images*/
     0% {
         left: 0%;
         -webkit-transform: -webkit-translateX (0%);
-        transform: scale(1.00, 1.00)translateX(0);
+        transform: scale(1.00, 1.00) translateX(0);
     }
     22% {
         left: 0%;
@@ -1371,7 +1683,7 @@ ol {
     25% {
         left: -100%;
         -webkit-transform: -webkit-translateX (0%);
-        transform: scale(1.00, 1.00)translateX(0);
+        transform: scale(1.00, 1.00) translateX(0);
     }
     47% {
         left: -100%;
@@ -1382,7 +1694,7 @@ ol {
     50% {
         left: -200%;
         -webkit-transform: -webkit-translateX (0%);
-        transform: scale(1.00, 1.00)translateX(0);
+        transform: scale(1.00, 1.00) translateX(0);
     }
     72% {
         left: -200%;
@@ -1393,7 +1705,7 @@ ol {
     75% {
         left: -300%;
         -webkit-transform: -webkit-translateX (0%);
-        transform: scale(1.00, 1.00)translateX(0);
+        transform: scale(1.00, 1.00) translateX(0);
     }
     97% {
         left: -300%;
@@ -1404,10 +1716,11 @@ ol {
     100% {
         left: -400%;
         -webkit-transform: -webkit-translateX (0%);
-        transform: scale(1.00, 1.00)translateX(0);
+        transform: scale(1.00, 1.00) translateX(0);
     }
 }
-@keyframes fade-in { /*fÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¼r das fade in vom ersten slider-text*/
+
+@keyframes fade-in { /*fur das fade in vom ersten slider-text*/
     0% {
         opacity: 0;
     }
@@ -1415,7 +1728,8 @@ ol {
         opacity: 1;
     }
 }
-@keyframes main-slider-text { /*text der ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¼ber der animation slided*/
+
+@keyframes main-slider-text { /*text der uber der animation slided*/
 
     0% {
         bottom: -5%;

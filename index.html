@@ -7,21 +7,23 @@
     <title>Tilt-Gaming: Startseite</title>
     <link rel="shortcut icon" type="image/x-icon" href="favicon.png">
     <!--Icon im Browser-Fenster-->
-    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css"
+          href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- Font Awesome Bootstrap-->
     <link rel="stylesheet" type="text/css" href="css/style.css">
-    <base href="img/">
+    <script type="text/javascript" src="css/jquery-3.2.0.min.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
     <!--<script>document.domain = "localhost";</script>-->
     <!--war notwendig für die TYPEKIT einbindung-->
     <script>
-        (function(d) {
+        (function (d) {
             var config = {
                     kitId: 'zdp4htj',
                     scriptTimeout: 3000,
                     async: true
                 },
                 h = d.documentElement,
-                t = setTimeout(function() {
+                t = setTimeout(function () {
                     h.className = h.className.replace(/\bwf-loading\b/g, "") + " wf-inactive";
                 }, config.scriptTimeout),
                 tk = d.createElement("script"),
@@ -31,14 +33,15 @@
             h.className += " wf-loading";
             tk.src = 'https://use.typekit.net/' + config.kitId + '.js';
             tk.async = true;
-            tk.onload = tk.onreadystatechange = function() {
+            tk.onload = tk.onreadystatechange = function () {
                 a = this.readyState;
                 if (f || a && a != "complete" && a != "loaded") return;
                 f = true;
                 clearTimeout(t);
                 try {
                     Typekit.load(config)
-                } catch (e) {}
+                } catch (e) {
+                }
             };
             s.parentNode.insertBefore(tk, s)
         })(document);
@@ -46,355 +49,451 @@
 </head>
 
 <body>
-    <div class="background">
+<div class="background">
 
 
+    <nav class="main-navigation">
+        <!--Navigation-->
+        <ul class="navbar">
+            <li class="burgerico navico"><i class="fa fa-bars" aria-hidden="true"></i></li>
+            <!--ist nur bei mobilen geräten eingeblendet-->
+            <li><img src="img/logo-tiltgames.png" alt="tiltgaminglogo" class="logo">
+                <h1>Tilt-Gaming</h1></li>
+            <li class="left xboxnav nomobile"><a href="index.html">XBOX<i class="fa fa-caret-right"
+                                                                          aria-hidden="true"></i></a></li>
+            <li class=" left ps4nav nomobile"><a href="#">PS4<i class="fa fa-caret-right" aria-hidden="true"></i></a>
+            </li>
+            <li class="left pcnav nomobile"><a href="#">PC<i class="fa fa-caret-right" aria-hidden="true"></i></a></li>
+            <li class="left wiiunav nomobile"><a href="#">WII U<i class="fa fa-caret-right" aria-hidden="true"></i></a>
+            </li>
+            <li class="left othernav nomobile"><a href="#">Other<i class="fa fa-caret-right" aria-hidden="true"></i></a>
+            </li>
+            <li class="newsnav nomobile"><a href="#">News<i class="fa fa-caret-right" aria-hidden="true"></i></a></li>
+            <li class="reviewsnav nomobile"><a href="#">Reviews<i class="fa fa-caret-right" aria-hidden="true"></i></a>
+            </li>
+            <li class="visiblebyclick" id="loginformdropdown">
+                <h3 class="jsformularheadline">User Login</h3>
+                <span class="jsformularinfo">Sign-in</span>
+                <form action="checksignin" id="signinform">
+                    <ul class="signin">
+                        <li class="form-column-style"><label for="username" class="firstcheck">Username</label>
+                            <input type="text" placeholder="test@me.more" id="Username"
+                                   class="formtextinput textinput0"><br></li>
+                        <li class="form-column-style"><label for="password" class="firstcheck">Password</label>
+                            <input type="text" placeholder="***********" id="password"
+                                   class="formtextinput textinput4"></li>
+                        <li class="form-column-style">
+                            <button type="button" class="formsubmit" id="signinsubmit">
+                                Sign-in
+                            </button>
+                        </li>
+                    </ul>
+                </form>
+                <form action="checksignup.php" class="jssignupformularinputs" id="signupform">
+                    <span class="jsformularinfo">Sign-up</span>
+                    <ul class="signup">
+                        <li class="form-column-style">
+                            <label for="male" class="firstcheck" id="gender">Male*</label>
+                            <input type="radio" name="gender" id="male">
+                            <label for="female" class="firstcheck" id="gender">Female*</label>
+                            <input type="radio" name="gender" id="female"></li>
+                        <li class="form-column-style">
+                            <label for="logintitle" class="logintitles-label">Titles</label>
+                            <select name="signuptitle" id="logintitle">
+                                <option value="Associatedegree" id="signuptitle" name="selectvalue">Associate
+                                    Degree
+                                </option>
+                                <option value="Bachelor" id="signuptitle" name="selectvalue">Bachelor</option>
+                                <option value="Engineerdegree" id="signuptitle" name="selectvalue">Engineer’s Degree
+                                </option>
+                                <option value="Doctor" id="signuptitle" name="selectvalue">Doctor</option>
+                            </select>
+                        </li>
+                        <li class="form-column-style">
+                            <label for="forename" class="firstcheck">Forename*</label>
+                            <input type="text" placeholder="Bob:*" id="forename"
+                                   class="formtextinput textinput1"><br></li>
+                        <li class="form-column-style">
+                            <label for="surname" class="firstcheck">Surname*</label>
+                            <input type="text" placeholder="Dylon:*" id="surname"
+                                   class="formtextinput textinput2"><br></li>
+                        <li class="form-column-style">
+                            <label for="telnumber" class="firstcheck">Tel. Num:*</label>
+                            <input type="text" placeholder="+43 699...." id="telnumber"
+                                   class="formtextinput textinput3"><br></li>
+                        <li class="form-column-style">
+                            <label for="email" class="firstcheck">E-Mail-address*</label>
+                            <input type="text" placeholder="test@me.more" id="email"
+                                   class="formtextinput textinput4"></li>
+                        <li class="form-column-style">
 
-        <nav class="main-navigation">
-            <!--Navigation-->
-            <ul class="navbar">
-                <li class="burgerico navico"><i class="fa fa-bars" aria-hidden="true"></i></li>
-                <!--ist nur bei mobilen geräten eingeblendet-->
-                <li><img src="logo-tiltgames.png" alt="tiltgaminglogo" class="logo"><h1>Tilt-Gaming</h1></li>
-                <li class="left xboxnav nomobile"><a href="index.html">XBOX<i class="fa fa-caret-right" aria-hidden="true"></i></a></li>
-                <li class=" left ps4nav nomobile"><a href="#">PS4<i class="fa fa-caret-right" aria-hidden="true"></i></a></li>
-                <li class="left pcnav nomobile"><a href="#">PC<i class="fa fa-caret-right" aria-hidden="true"></i></a></li>
-                <li class="left wiiunav nomobile"><a href="#">WII U<i class="fa fa-caret-right" aria-hidden="true"></i></a></li>
-                <li class="left othernav nomobile"><a href="#">Other<i class="fa fa-caret-right" aria-hidden="true"></i></a></li>
-                <li class="newsnav nomobile"><a href="#">News<i class="fa fa-caret-right" aria-hidden="true"></i></a></li>
-                <li class="reviewsnav nomobile"><a href="#">Reviews<i class="fa fa-caret-right" aria-hidden="true"></i></a></li>
-                <li class="chartsnav navico nomobile"><a><i class="fa fa-bar-chart" aria-hidden="true"></i></a></li>
-                <li class="searchnav navico"><a><i class="fa fa-search" aria-hidden="true"></i></a></li>
-                <li class="signupnav navico"><a><i class="fa fa-user-circle-o" aria-hidden="true"></i></a></li>
-            </ul>
-        </nav>
-        <main class="main-wrapper">
-            <!--gesammter Content-->
-            <article class="slider" id="slider">
-                <!--Slider mit aktuellem Thema-->
-                <ol class="slider-circles">
-                    <li><i class="fa fa-circle slider1" aria-hidden="true"></i></li>
-                    <li><i class="fa fa-circle slider2" aria-hidden="true"></i></li>
-                    <li><i class="fa fa-circle slider3" aria-hidden="true"></i></li>
-                    <li><i class="fa fa-circle slider4" aria-hidden="true"></i></li>
-                </ol>
-                <figure class="slider-elements">
-                    <picture>
-                        <source media="(min-width: 1400px)" srcset="codawbig.png">
-                        <source media="(min-width: 556px)" srcset="codaw.png">
-                        <img src="codawsmall.png" alt="Call of Duty: Advanced Warfare">
-                    </picture>
-                    <picture>
-                        <source media="(min-width: 1400px)" srcset="ps4prosliderbig.png">
-                        <source media="(min-width: 556px)" srcset="ps4proslider.png">
-                        <img src="ps4proslidersmall.png"   alt="Call of Duty: Advanced Warfare">
-                    </picture>
-                    <picture>
-                        <source media="(min-width: 1400px)" srcset="overwatchsliderbig.png">
-                        <source media="(min-width: 556px)" srcset="overwatchslider.png">
-                        <img src="overwatchslidersmall.png"  alt="Call of Duty: Advanced Warfare">
-                    </picture>
-                    <picture>
-                        <source media="(min-width: 1400px)" srcset="skyrimsliderbig.png">
-                        <source media="(min-width: 556px)" srcset="skyrimslider.png">
-                        <img src="skyrimslidersmall.png"   alt="Call of Duty: Advanced Warfare">
-                    </picture>
-                    <picture>
-                        <source media="(min-width: 1400px)" srcset="codawbig.png">
-                        <source media="(min-width: 556px)" srcset="codaw.png">
-                        <img src="codawsmall.png"  alt="Call of Duty: Advanced Warfare">
-                    </picture>
+                            <button type="submit" class="formsubmit" id="signupsubmit">
+                                Sign-up
+                            </button>
+                        </li>
 
-                </figure>
-                <div class="progress-bar">
-                </div>
-                <div class="slider-elements-text">
+                    </ul>
 
-                    <div class="slider-text-first mobile-slider-text">
-                        <a href="#">
-                            <h3><span class="slider-text1">CALL OF DUTY:</span><br>
+
+                </form>
+            </li>
+            <li>
+                <form class="visiblebyclick" id="searchform">
+                    <button class="dropdownsearchbutton">Search</button>
+                    <input type="text" class="newsearch" placeholder="Anno, Guild Wars......">
+                </form>
+            </li>
+            <li
+                    class="chartsnav navico nomobile"><a class="jsnavbutton"><i class="fa fa-bar-chart"
+                                                                       aria-hidden="true"></i></a></li>
+            <li class="searchnav navico" id="searchnav"><a class="jsnavbutton"><i class="fa fa-search" aria-hidden="true"></i></a></li>
+            <li class="signupnav navico"
+                id="loginnav"><a class="jsnavbutton"><i class="fa fa-user-circle-o" aria-hidden="true"></i></a></li>
+        </ul>
+    </nav>
+    <main class="main-wrapper">
+        <!--gesammter Content-->
+
+        <section class="slider" id="slider">
+
+            <!--Slider mit aktuellem Thema-->
+
+            <ol class="slider-circles">
+                <li><i class="fa fa-circle slider0" aria-hidden="true" data-index="0"></i></li>
+                <li><i class="fa fa-circle slider1" aria-hidden="true" data-index="1"></i></li>
+                <li><i class="fa fa-circle slider2" aria-hidden="true" data-index="2"></i></li>
+                <li><i class="fa fa-circle slider3" aria-hidden="true" data-index="3"></i></li>
+            </ol>
+
+            <figure class="slider-elements" id="slider-elements">
+                <picture id="js-slider">
+                    <source media="(min-width: 1400px)" srcset="img/codawbig.png">
+                    <source media="(min-width: 756px)" srcset="img/codaw.png">
+                    <img class="css-img-slideshow" src="img/codawsmall.png" alt="Call of Duty: Advanced Warfare">
+                </picture>
+                <picture id="js-slider">
+                    <source media="(min-width: 1400px)" srcset="img/ps4prosliderbig.png">
+                    <source media="(min-width: 756px)" srcset="img/ps4proslider.png">
+                    <img class="css-img-slideshow" src="img/ps4proslidersmall.png"
+                         alt="Call of Duty: Advanced Warfare">
+                </picture>
+                <picture id="js-slider">
+                    <source media="(min-width: 1400px)" srcset="img/overwatchsliderbig.png">
+                    <source media="(min-width: 756px)" srcset="img/overwatchslider.png">
+                    <img class="css-img-slideshow" src="img/overwatchslidersmall.png"
+                         alt="Call of Duty: Advanced Warfare">
+                </picture>
+                <picture id="js-slider">
+                    <source media="(min-width: 1400px)" srcset="img/skyrimsliderbig.png">
+                    <source media="(min-width: 756px)" srcset="img/skyrimslider.png">
+                    <img class="css-img-slideshow" src="img/skyrimslidersmall.png"
+                         alt="Call of Duty: Advanced Warfare">
+                </picture>
+                <picture id="js-slider">
+                    <source media="(min-width: 1400px)" srcset="img/codawbig.png">
+                    <source media="(min-width: 756px)" srcset="img/codaw.png">
+                    <img class="css-img-slideshow" src="img/codawsmall.png" alt="Call of Duty: Advanced Warfare">
+                </picture>
+
+            </figure>
+            <div class="progress-bar">
+            </div>
+            <div class="slider-elements-text">
+
+                <div class="slider-text-first mobile-slider-text" id="JSslider-text">
+                    <a href="#">
+                        <h3><span class="slider-text1">CALL OF DUTY:</span><br>
                             <span class="slider-text2">Infinite Warfare</span></h3>
-                            <span class="slider-text3">Better than expected?</span>
-                        </a>
-                    </div>
-                    <div class="slider-text-second mobile-slider-text">
-                        <a href="#">
-                            <h3><span class="slider-text1">4k Console:</span><br>
-                            <span class="slider-text2">PS4 Pro</span></h3>
-                            <span class="slider-text3">is it a big difference?</span>
-                        </a>
-                    </div>
-                    <div class="slider-text-third mobile-slider-text">
-                        <a href="#">
-                            <h3><span class="slider-text1">Next Moba:</span><br>
-                            <span class="slider-text2">Overwatch</span></h3>
-                            <span class="slider-text3">Let´s start the fight</span>
-                        </a>
-                    </div>
-                    <div class="slider-text-fourth mobile-slider-text">
-                        <a href="#">
-                            <h3><span class="slider-text1">Old but Gold</span><br>
-                            <span class="slider-text2">Skyrim HD</span></h3>
-                            <span class="slider-text3">Our Review!</span>
-                        </a>
-                    </div>
-
+                        <span class="slider-text3">Better than expected?</span>
+                    </a>
                 </div>
+                <div class="slider-text-second mobile-slider-text" id="JSslider-text">
+                    <a href="#">
+                        <h3><span class="slider-text1">4k Console:</span><br>
+                            <span class="slider-text2">PS4 Pro</span></h3>
+                        <span class="slider-text3">is it a big difference?</span>
+                    </a>
+                </div>
+                <div class="slider-text-third mobile-slider-text" id="JSslider-text">
+                    <a href="#">
+                        <h3><span class="slider-text1">Next Moba:</span><br>
+                            <span class="slider-text2">Overwatch</span></h3>
+                        <span class="slider-text3">Let´s start the fight</span>
+                    </a>
+                </div>
+                <div class="slider-text-fourth mobile-slider-text" id="JSslider-text">
+                    <a href="#">
+                        <h3><span class="slider-text1">Old but Gold</span><br>
+                            <span class="slider-text2">Skyrim HD</span></h3>
+                        <span class="slider-text3">Our Review!</span>
+                    </a>
+                </div>
+
+            </div>
+
+        </section>
+
+        <div class="upper-inner-wraper">
+            <!--Oberer bereich des Contents-->
+            <article class="upper-column-left">
+                <h2>News</h2>
+                <ol class="news">
+                    <li class="ps4-controller">
+                        <a href="#" class="left-imgbox">
+                            <h3 class="news-titles">2 new PS4 controller announced!</h3>
+                            <span class="game-dates">03.01.16</span>
+                            <picture>
+                                <source media="(min-width: 1400px)" srcset="img/ps4-controllerbig.png">
+                                <source media="(min-width: 765px)" srcset="img/ps4-controller.png">
+                                <img src="img/ps4-controllersmall.png" alt="PS4 Controller">
+                            </picture>
+                        </a>
+                    </li>
+                    <li class="skyrim-HD">
+                        <a href="#" class="left-imgbox">
+                            <h3 class="news-titles">Skyrim HD: No mods on PS4!</h3>
+                            <span class="game-dates">02.11.16</span>
+                            <picture>
+                                <source media="(min-width: 1400px)" srcset="img/skyrim-hdbig.png">
+                                <source media="(min-width: 765px)" srcset="img/skyrim-HD.png">
+                                <img src="img/skyrimhdsmall.png" alt="SkyrimHD">
+                            </picture>
+                        </a>
+                    </li>
+                    <li class="ps4pro-vsxb1">
+                        <a href="#" class="left-imgbox">
+                            <h3 class="news-titles">PS4 Pro vs. XB1 S </h3>
+                            <span class="game-dates">02.11.16</span>
+                            <picture>
+                                <source media="(min-width: 1400px)" srcset="img/ps4vsxb1big.png">
+                                <source media="(min-width: 765px)" srcset="img/ps4xb1.png">
+                                <img src="img/ps4vsxb1small.png" alt="PS4 Pro vs XB1">
+                            </picture>
+                        </a>
+                    </li>
+                    <li class="zelda">
+                        <a href="#" class="left-imgbox">
+                            <h3 class="news-titles">Zelda: No Wii U version?</h3>
+                            <span class="game-dates">01.11.16</span>
+                            <picture>
+                                <source media="(min-width: 1400px)" srcset="img/zeldbig.png">
+                                <source media="(min-width: 756px)" srcset="img/zelda.png">
+                                <img src="img/zeldasmall.png" alt="Legend of Zelda">
+                            </picture>
+                        </a>
+                    </li>
+                    <li class="masseffekt3">
+                        <a href="#" class="left-imgbox">
+                            <h3 class="news-titles">Mass Effekt 3 on PS4: New trailer!</h3>
+                            <span class="game-dates">01.11.16</span>
+                            <picture>
+                                <source media="(min-width: 1400px)" srcset="img/masseffektbig.png">
+                                <source media="(min-width: 765px)" srcset="img/massefekt.png">
+                                <img src="img/masseffektsmall.png" alt="Mass Effekt 3 HD">
+                            </picture>
+                        </a>
+                    </li>
+                    <li class="anno2205">
+                        <a href="#" class="left-imgbox">
+                            <h3 class="news-titles">Anno 2205: next-gen graphics!</h3>
+                            <span class="game-dates">01.11.16</span>
+                            <picture>
+                                <source media="(min-width: 1400px)" srcset="img/anno2205big.png">
+                                <source media="(min-width: 765px)" srcset="img/anno2205.png">
+                                <img src="img/anno2205small.png" alt="Anno: 2205 Wallpaper">
+                            </picture>
+                        </a>
+                    </li>
+                </ol>
             </article>
-            <div class="upper-inner-wraper">
-                <!--Oberer bereich des Contents-->
-                <article class="upper-column-left">
-                    <h2>News</h2>
-                    <ol class="news">
-                        <li class="ps4-controller">
-                            <a href="#" class="left-imgbox">
-                                <h3 class="news-titles">2 new PS4 controller announced!</h3>
-                                <span class="game-dates">03.01.16</span>
-                                <picture>
-                                    <source media="(min-width: 1400px)" srcset="ps4-controllerbig.png">
-                                    <source media="(min-width: 765px)" srcset="ps4-controller.png">
-                                    <img src="ps4-controllersmall.png" alt="PS4 Controller">
-                                </picture>
-                            </a>
+            <section class="upper-column-right">
+                <h2>Upcoming</h2>
+                <ol class="news">
+                    <li class="dishonored ">
+                        <a href="#" class="left-imgbox">
+                            <h3 class="upcoming-titles">Dishonored 2</h3>
+                            <span class="game-dates">01.01.16</span>
+                            <div class="upcoming-consoles">
+                                <span>PC</span>
+                                <span>PS4</span>
+                                <span>XB1</span>
+                            </div>
+                            <picture>
+                                <source media="(min-width: 1400px)" srcset="img/dishonoredbig.png">
+                                <source media="(min-width: 600px)" srcset="img/dishonored2.png">
+                                <img src="img/dishonoredsmall.png" alt="Dishonored 2">
+                            </picture>
+                        </a>
+                    </li>
+                    <li class="pokemon">
+                        <a href="#" class="left-imgbox">
+                            <h3 class="upcoming-titles">Pokemon: Sun & Moon</h3>
+                            <span class="game-dates">08.01.17</span>
+                            <div class="upcoming-consoles">
+                                <span>NDS</span>
+                            </div>
+                            <picture>
+                                <source media="(min-width: 1400px)" srcset="img/pokemonbig.png">
+                                <source media="(min-width: 600px)" srcset="img/pokemon.png">
+                                <img src="img/pokemonsmall.png" alt="Pokemon Sun and Moon">
+                            </picture>
+                        </a>
+                    </li>
+                    <li class="ff15">
+                        <a href="#" class="left-imgbox">
+                            <h3 class="upcoming-titles">Final Fantasy 15</h3>
+                            <span class="game-dates">18.01.17</span>
+                            <div class="upcoming-consoles">
+                                <span>PC</span>
+                                <span>PS4</span>
+                                <span>XB1</span>
+                            </div>
+                            <picture>
+                                <source media="(min-width: 1400px)" srcset="img/ff15big.png">
+                                <source media="(min-width: 600px)" srcset="img/ff15.png">
+                                <img src="img/ff15small.png" alt="Final Fantasy 15">
+                            </picture>
+                        </a>
+                    </li>
+                </ol>
+                <section class="top-games">
+                    <h2>Top-Games</h2>
+                    <ol>
+                        <li class="gta5 tg">
+                            <div class="first-pic tg-inner tg-pic">
+                                <img src="img/gta5.png" alt="GTA 5">
+                            </div>
+                            <div class="first-text tg-inner bg-text">
+                                <h3 class="text-tg">GTA5</h3>
+                                <div class="text-tg"><a href="#">PC</a>|<a href="#">PS4</a>|<a href="#">XB1</a></div>
+                                <div class="text-counter">95</div>
+                            </div>
                         </li>
-                        <li class="skyrim-HD">
-                            <a href="#" class="left-imgbox">
-                                <h3 class="news-titles">Skyrim HD: No mods on PS4!</h3>
-                                <span class="game-dates">02.11.16</span>
-                                <picture>
-                                    <source media="(min-width: 1400px)" srcset="skyrim-hdbig.png">
-                                    <source media="(min-width: 765px)" srcset="skyrim-HD.png">
-                                    <img src="skyrimhdsmall.png" alt="SkyrimHD">
-                                </picture>
-                            </a>
+                        <li class="bf1 tg">
+                            <div class="second-pic tg-inner tg-pic">
+                                <img src="img/bf1.png" alt="Battlefield n1">
+                            </div>
+                            <div class="second-text tg-inner bg-text">
+                                <h3 class="text-tg">Battlefield 1</h3>
+                                <div class="text-tg"><a href="#">PC</a>|<a href="#">PS4</a>|<a href="#">XB1</a></div>
+                                <div class="text-counter">92</div>
+                            </div>
                         </li>
-                        <li class="ps4pro-vsxb1">
-                            <a href="#" class="left-imgbox">
-                                <h3 class="news-titles">PS4 Pro vs. XB1 S </h3>
-                                <span class="game-dates">02.11.16</span>
-                                <picture>
-                                    <source media="(min-width: 1400px)" srcset="ps4vsxb1big.png">
-                                    <source media="(min-width: 765px)" srcset="ps4xb1.png">
-                                    <img src="ps4vsxb1small.png" alt="PS4 Pro vs XB1">
-                                </picture>
-                            </a>
-                        </li>
-                        <li class="zelda">
-                            <a href="#" class="left-imgbox">
-                                <h3 class="news-titles">Zelda: No Wii U version?</h3>
-                                <span class="game-dates">01.11.16</span>
-                                <picture>
-                                    <source media="(min-width: 1400px)" srcset="zeldbig.png">
-                                    <source media="(min-width: 756px)" srcset="zelda.png">
-                                    <img src="zeldasmall.png" alt="Legend of Zelda">
-                                </picture>
-                            </a>
-                        </li>
-                        <li class="masseffekt3">
-                            <a href="#" class="left-imgbox">
-                                <h3 class="news-titles">Mass Effekt 3 on PS4: New trailer!</h3>
-                                <span class="game-dates">01.11.16</span>
-                                <picture>
-                                    <source media="(min-width: 1400px)" srcset="masseffektbig.png">
-                                    <source media="(min-width: 765px)" srcset="massefekt.png">
-                                    <img src="masseffektsmall.png" alt="Mass Effekt 3 HD">
-                                </picture>
-                            </a>
-                        </li>
-                        <li class="anno2205">
-                            <a href="#" class="left-imgbox">
-                                <h3 class="news-titles">Anno 2205: next-gen graphics!</h3>
-                                <span class="game-dates">01.11.16</span>
-                                <picture>
-                                    <source media="(min-width: 1400px)" srcset="anno2205big.png">
-                                    <source media="(min-width: 765px)" srcset="anno2205.png">
-                                    <img src="anno2205small.png" alt="Anno: 2205 Wallpaper">
-                                </picture>
-                            </a>
-                        </li>
-                    </ol>
-                </article>
-                <section class="upper-column-right">
-                    <h2>Upcoming</h2>
-                    <ol class="news">
-                        <li class="dishonored ">
-                            <a href="#" class="left-imgbox">
-                                <h3 class="upcoming-titles">Dishonored 2</h3>
-                                <span class="game-dates">01.01.16</span>
-                                <div class="upcoming-consoles">
-                                    <span>PC</span>
-                                    <span>PS4</span>
-                                    <span>XB1</span>
-                                </div>
-                                <picture>
-                                    <source media="(min-width: 1400px)" srcset="dishonoredbig.png">
-                                    <source media="(min-width: 600px)" srcset="dishonored2.png">
-                                    <img src="dishonoredsmall.png" alt="Dishonored 2">
-                                </picture>
-                            </a>
-                        </li>
-                        <li class="pokemon">
-                            <a href="#" class="left-imgbox">
-                                <h3 class="upcoming-titles">Pokemon: Sun & Moon</h3>
-                                <span class="game-dates">08.01.17</span>
-                                <div class="upcoming-consoles">
-                                    <span>NDS</span>
-                                </div>
-                                <picture>
-                                    <source media="(min-width: 1400px)" srcset="pokemonbig.png">
-                                    <source media="(min-width: 600px)" srcset="pokemon.png">
-                                    <img src="pokemonsmall.png" alt="Pokemon Sun and Moon">
-                                </picture>
-                            </a>
-                        </li>
-                        <li class="ff15">
-                            <a href="#" class="left-imgbox">
-                                <h3 class="upcoming-titles">Final Fantasy 15</h3>
-                                <span class="game-dates">18.01.17</span>
-                                <div class="upcoming-consoles">
-                                    <span>PC</span>
-                                    <span>PS4</span>
-                                    <span>XB1</span>
-                                </div>
-                                <picture>
-                                    <source media="(min-width: 1400px)" srcset="ff15big.png">
-                                    <source media="(min-width: 600px)" srcset="ff15.png">
-                                    <img src="ff15small.png" alt="Final Fantasy 15">
-                                </picture>
-                            </a>
-                        </li>
-                    </ol>
-                    <section class="top-games">
-                        <h2>Top-Games</h2>
-                        <ol>
-                            <li class="gta5 tg">
-                                <div class="first-pic tg-inner tg-pic">
-                                    <img src="gta5.png" alt="GTA 5">
-                                </div>
-                                <div class="first-text tg-inner bg-text">
-                                    <h3 class="text-tg">GTA5</h3>
-                                    <div class="text-tg"><a href="#">PC</a>|<a href="#">PS4</a>|<a href="#">XB1</a></div>
-                                    <div class="text-counter">95</div>
-                                </div>
-                            </li>
-                            <li class="bf1 tg">
-                                <div class="second-pic tg-inner tg-pic">
-                                    <img src="bf1.png" alt="Battlefield n1">
-                                </div>
-                                <div class="second-text tg-inner bg-text">
-                                    <h3 class="text-tg">Battlefield 1</h3>
-                                    <div class="text-tg"><a href="#">PC</a>|<a href="#">PS4</a>|<a href="#">XB1</a></div>
-                                    <div class="text-counter">92</div>
-                                </div>
-                            </li>
-                            <li class="dbzx tg">
-                                <div class="third-pic tg-inner tg-pic">
-                                    <img src="dbzx.png" alt="Dragonball Z: Xenoverse 2">
-                                </div>
-                                <div class="third-text tg-inner bg-text">
-                                    <h3 class="text-tg">Xenoverse 2</h3>
-                                    <div class="text-tg"><a href="#">PS4</a>|<a href="#">XB1</a></div>
-                                    <div class="text-counter">90</div>
-                                </div>
-                            </li>
-                        </ol>
-                    </section>
-                </section>
-            </div>
-            <div class="adv-area nomobile">
-                <img src="nvidia-adv.png" alt="Nvidia Advertisement">
-            </div>
-            <!--Werbebereich-->
-            <section class="nomobile reviews">
-                <h2>Reviews</h2>
-                <section class="left-review-column nomobile">
-                    <h3>Pokemon Go on IOS</h3>
-                    <img class="pokemongo" src="pokemongo.png" alt="pokemon go picture">
-                    <p>Ein armer Mann hatte so viel Kinder, daß er sch on alle Welt zu Gevatter gebeten hatte und als er noch eins bekam, so war niemand mehr übrig, den er bitten konnte. Er wußte nicht was er anfangen sollte, legte sich in seiner Betrübnis
-                        nieder, und schlief ein. britzelten und backten sich selber.“ <br>Wie er das gesagt hatte, kamen die Fische, und trugen sich selber auf. „Und als ich die fünfte Treppe heraufgekommen war, guckte ich durch das Schlüsselloch einer
-                        Thür, und da sah ich Euch, Gevatter, und ihr hattet lange lange Hörner.“ „Ei, das ist nicht wahr.“ Dem Mann ward angst, und er lief fort, und wer weiß was ihm der Herr Gevatter sonst angethan hätte more...</p>
-                </section>
-                <section class="right-review-column nomobile">
-                    <ol class="news">
-                        <li>
-                            <a href="#">
-                                <h3 class="review-titles">PS4: Gone home</h3>
-                                <picture>
-                                    <source media="(min-width: 1400px)" srcset="gonehomebig.png">
-                                    <img src="gonehome.png" alt="PS4 Controller">
-                                </picture>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <h3 class="review-titles">PS4: Elder Scrolls: Online!</h3>
-                                <picture>
-                                    <source media="(min-width: 1400px)" srcset="tesobig.png">
-                                    <img src="teso.png" alt="SkyrimHD">
-                                </picture>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <h3 class="review-titles">PC: Final Fantasy 14</h3>
-                                <picture>
-                                    <source media="(min-width: 1400px)" srcset="ff14big.png">
-                                    <img src="ff14.png" alt="PS4 Pro vs XB1">
-                                </picture>
-                            </a>
+                        <li class="dbzx tg">
+                            <div class="third-pic tg-inner tg-pic">
+                                <img src="img/dbzx.png" alt="Dragonball Z: Xenoverse 2">
+                            </div>
+                            <div class="third-text tg-inner bg-text">
+                                <h3 class="text-tg">Xenoverse 2</h3>
+                                <div class="text-tg"><a href="#">PS4</a>|<a href="#">XB1</a></div>
+                                <div class="text-counter">90</div>
+                            </div>
                         </li>
                     </ol>
                 </section>
             </section>
-            <!--Reviews über Verschiedene Spiele-->
-        </main>
-        <footer class="footer footer-mainpage">
-            <!--Footer-->
-            <div class="footer-content">
-                <div class="footer-topics nomobile">
-                    <h2>Topics</h2>
-                    <ol>
+        </div>
+        <div class="adv-area nomobile">
+            <img src="img/nvidia-adv.png" alt="Nvidia Advertisement">
+        </div>
+        <!--Werbebereich-->
+        <section class="nomobile reviews">
+            <h2>Reviews</h2>
+            <section class="left-review-column nomobile">
+                <h3>Pokemon Go on IOS</h3>
+                <img class="pokemongo" src="img/pokemongo.png" alt="pokemon go picture">
+                <p>Ein armer Mann hatte so viel Kinder, daß er sch on alle Welt zu Gevatter gebeten hatte und als er
+                    noch eins bekam, so war niemand mehr übrig, den er bitten konnte. Er wußte nicht was er anfangen
+                    sollte, legte sich in seiner Betrübnis
+                    nieder, und schlief ein. britzelten und backten sich selber.“ <br>Wie er das gesagt hatte, kamen die
+                    Fische, und trugen sich selber auf. „Und als ich die fünfte Treppe heraufgekommen war, guckte ich
+                    durch das Schlüsselloch einer
+                    Thür, und da sah ich Euch, Gevatter, und ihr hattet lange lange Hörner.“ „Ei, das ist nicht wahr.“
+                    Dem Mann ward angst, und er lief fort, und wer weiß was ihm der Herr Gevatter sonst angethan hätte
+                    more...</p>
+            </section>
+            <section class="right-review-column nomobile">
+                <ol class="news">
+                    <li>
+                        <a href="#">
+                            <h3 class="review-titles">PS4: Gone home</h3>
+                            <picture>
+                                <source media="(min-width: 1400px)" srcset="img/gonehomebig.png">
+                                <img src="img/gonehome.png" alt="PS4 Controller">
+                            </picture>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <h3 class="review-titles">PS4: Elder Scrolls: Online!</h3>
+                            <picture>
+                                <source media="(min-width: 1400px)" srcset="img/tesobig.png">
+                                <img src="img/teso.png" alt="eso online">
+                            </picture>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <h3 class="review-titles">PC: Final Fantasy 14</h3>
+                            <picture>
+                                <source media="(min-width: 1400px)" srcset="img/ff14big.png">
+                                <img src="img/ff14.png" alt="PS4 Pro vs XB1">
+                            </picture>
+                        </a>
+                    </li>
+                </ol>
+            </section>
+        </section>
+        <!--Reviews über Verschiedene Spiele-->
+    </main>
+    <footer class="footer footer-mainpage">
+        <!--Footer-->
+        <div class="footer-content">
+            <div class="footer-topics nomobile">
+                <h2>Topics</h2>
+                <ol>
 
-                        <li><a href="#">Games A-Z</a></li>
-                        <li><a href="#">Top Reviews</a></li>
-                        <li><a href="#">CoD: Infinity Warfare</a></li>
-                        <li><a href="#">BF1</a></li>
-                        <li><a href="#">Fifa 17</a></li>
-                        <li><a href="#">WWE 2k17</a></li>
-                        <li><a href="#">NBA 2k17</a></li>
-                    </ol>
-                </div>
-                <div class="footer-imprint">
-                    <h2>Imprint</h2>
-                    <ol>
-                        <li><u>Address:</u><br> Wagramerstraße<br>17/63/15 3468 Germany
-                        </li>
-                        <li><u>Phone:</u><br> 0660 645373527
-                        </li>
-                        <li><u>Email:</u><br> info@tiltgaming.com
-                        </li>
-                    </ol>
-                </div>
-                <div class="footer-community">
-                    <h2>Community</h2>
-                    <ol>
-                        <li><i class="fa fa-facebook-official" aria-hidden="true"></i><a href="#"> Facebook.com/Tilt-Gaming</a></li>
-                        <li><i class="fa fa-twitter" aria-hidden="true"></i><a href="#"> Twitter.com/tiltgaming</a></li>
-                        <li class="forumfooter"><a href="#">Forum</a></li>
-                    </ol>
-                </div>
-                <div class="footer-logos">
-                    <img src="logo-tiltgames.png" alt="tiltgaming-logo" class="tiltgaminglogo-footer">
-                    <img src="copyright.png" alt="copyright logo" class="copyright-logo">
-                    <img src="poweredby.png" alt="powered by" class="poweredby">
-                    <img src="ea.png" alt="ea logo" class="ealogo">
-                    <img src="gamestop.png" alt="gamestop logo" class="gamestoplogo">
-                    <img src="ubisoft.png" alt="ubisoft logo" class="ubisoftlogo">
-                </div>
-
+                    <li><a href="#">Games A-Z</a></li>
+                    <li><a href="#">Top Reviews</a></li>
+                    <li><a href="#">CoD: Infinity Warfare</a></li>
+                    <li><a href="#">BF1</a></li>
+                    <li><a href="#">Fifa 17</a></li>
+                    <li><a href="#">WWE 2k17</a></li>
+                    <li><a href="#">NBA 2k17</a></li>
+                </ol>
             </div>
-        </footer>
-    </div>
+            <div class="footer-imprint">
+                <h2>Imprint</h2>
+                <ol>
+                    <li><u>Address:</u><br> Wagramerstraße<br>17/63/15 3468 Germany
+                    </li>
+                    <li><u>Phone:</u><br> 0660 645373527
+                    </li>
+                    <li><u>Email:</u><br> info@tiltgaming.com
+                    </li>
+                </ol>
+            </div>
+            <div class="footer-community">
+                <h2>Community</h2>
+                <ol>
+                    <li><i class="fa fa-facebook-official" aria-hidden="true"></i><a href="#">
+                        Facebook.com/Tilt-Gaming</a></li>
+                    <li><i class="fa fa-twitter" aria-hidden="true"></i><a href="#"> Twitter.com/tiltgaming</a></li>
+                    <li class="forumfooter"><a href="#">Forum</a></li>
+                </ol>
+            </div>
+            <div class="footer-logos">
+                <img src="img/logo-tiltgames.png" alt="tiltgaming-logo" class="tiltgaminglogo-footer">
+                <img src="img/copyright.png" alt="copyright logo" class="copyright-logo">
+                <img src="img/poweredby.png" alt="powered by" class="poweredby">
+                <img src="img/ea.png" alt="ea logo" class="ealogo">
+                <img src="img/gamestop.png" alt="gamestop logo" class="gamestoplogo">
+                <img src="img/ubisoft.png" alt="ubisoft logo" class="ubisoftlogo">
+            </div>
+
+        </div>
+    </footer>
+</div>
 </body>
 
 </html>
